@@ -1,28 +1,35 @@
-name: deploy
+name: 部署文档
 
 on:
   push:
-    branches: [main]
+    branches:
+      # 确保这是你正在使用的分支名称
+      - main
 
 jobs:
-  deploy:
+  deploy-gh-pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Setup Node.js v18.x
-        uses: actions/setup-node@v1
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          node-version: "18.x"
+          fetch-depth: 0
+          # 如果你文档需要 Git 子模块，取消注释下一行
+          # submodules: true
 
-      - name: Install
-        run: pnpm install
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          run_install: true
 
-      # - name: node esbuild
-      #   run: node node_modules/esbuild/install.js
 
-      - name: Build
-        run: pnpm run build
+      - name: 设置 Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
