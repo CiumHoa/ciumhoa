@@ -10,20 +10,18 @@
   },
   "dependencies": {
     "echarts": "^5.6.0",
-    "swiper": "^11.2.5",
     "vue": "^3.5.13"
   },
   "devDependencies": {
     "@element-plus/icons-vue": "^2.3.1",
-    "@types/swiper": "^6.0.0",
-    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue": "^5.2.3",
     "@vue/tsconfig": "^0.7.0",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
-    "typescript": "~5.7.2",
-    "vite": "^6.2.0",
-    "vue-tsc": "^2.2.4"
+    "typescript": "~5.7.3",
+    "vite": "^6.3.5",
+    "vue-tsc": "^2.2.10"
   },
   "packageManager": "pnpm@10.10.0+sha1.f657bc37aa5e08da2ecff3877fe3bbb4b13703ba"
 }
